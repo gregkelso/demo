@@ -4,12 +4,6 @@
         <Property name="filename">log/demo.log</Property>
     </Properties>
     <Appenders>
-        <Appender type="Console" name="Console">
-            <Layout type="PatternLayout" pattern="%d %p [%t] %m%n" />
-        </Appender>
-        <Appender type="Console" name="FLOW">
-            <Layout type="PatternLayout" pattern="%C{1}.%M %m %ex%n" />
-        </Appender>
         <Appender type="File" name="File" fileName="${filename}">
             <Layout type="PatternLayout" pattern="%d %p %C{1.} [%t] %m%n" />
         </Appender>
