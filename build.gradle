@@ -37,6 +37,9 @@ plugins {
     // simply being run during the test.  It does this by
     // changing the code and seeing if the test fails as a result.
     id 'info.solidsoft.pitest' version '1.4.0'
+
+    // add spotbugs for static code analysis
+    id "com.github.spotbugs" version "2.0.0"
 }
 
 // sets the version of Java we want to use - 8
@@ -111,8 +114,21 @@ dependencies {
     // so we can programmatically run flyway at startup
     compile "org.flywaydb:flyway-core:5.2.4"
 
+    // added for SCA test
     compile 'org.apache.struts:struts2-apps:2.1.2'
+
+    // findsecbugs plugin for SpotBugs
+    spotbugsPlugins 'com.h3xstream.findsecbugs.findsecbugs-plugin:1.7.1'
 }
+
+spotbugs {
+    toolVersion = '3.1.12'
+    ignoreFailures = true
+    effort = "max"
+    reportLevel = "low"
+    reportsDir = file("$project.buildDir/spotbugs")
+}
+
 
 task copyToLib(type: Copy) {
     from configurations.localDeps
