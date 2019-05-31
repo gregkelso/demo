@@ -120,7 +120,7 @@ dependencies {
     compile 'org.apache.struts:struts2-apps:2.1.2'
 
     // findsecbugs plugin for SpotBugs
-    spotbugsPlugins 'com.h3xstream.findsecbugs.findsecbugs-plugin:1.7.1'
+    spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.7.1'
 }
 
 spotbugs {
