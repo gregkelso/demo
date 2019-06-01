@@ -37,6 +37,9 @@ plugins {
     // simply being run during the test.  It does this by
     // changing the code and seeing if the test fails as a result.
     id 'info.solidsoft.pitest' version '1.4.0'
+
+    // SAST
+    id "com.github.spotbugs" version "1.7.1"
 }
 
 // sets the version of Java we want to use - 8
@@ -111,6 +114,17 @@ dependencies {
     // so we can programmatically run flyway at startup
     compile "org.flywaydb:flyway-core:5.2.4"
 
+    //findsecbugs  plugin
+    spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.7.1'
+
+}
+
+spotbugs {
+  toolVersion='3.1.12'
+  ignoreFailures=true
+  effort="max"
+  reportLevel="low"
+  reportDir=file("$project.buildDir/spotbugs")
 }
 
 task copyToLib(type: Copy) {
