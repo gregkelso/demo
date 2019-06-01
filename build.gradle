@@ -124,7 +124,7 @@ spotbugs {
   ignoreFailures=true
   effort="max"
   reportLevel="low"
-  reportDir=file("$project.buildDir/spotbugs")
+  reportsDir=file("$project.buildDir/spotbugs")
 }
 
 task copyToLib(type: Copy) {
