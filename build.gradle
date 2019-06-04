@@ -116,8 +116,8 @@ dependencies {
     // in class dependentcy
     compile 'org.apache.struts:struts2-apps:2.1.2'
 
-    // finsecbugs plugin for spotbugs
-    spotbugsPlugins 'com.h3xstream.finsecbugs:findsecbugs-plugin:1.7.1'
+    // findsecbugs plugin for spotbugs
+    spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.7.1'
 
 }
 
