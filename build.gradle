@@ -37,6 +37,8 @@ plugins {
     // simply being run during the test.  It does this by
     // changing the code and seeing if the test fails as a result.
     id 'info.solidsoft.pitest' version '1.4.0'
+    // Add spotbugs for static analysis
+    id "com.github.spotbugs" version "1.7.1"
 }
 
 // sets the version of Java we want to use - 8
@@ -114,6 +116,17 @@ dependencies {
     // in class dependentcy
     compile 'org.apache.struts:struts2-apps:2.1.2'
 
+    // finsecbugs plugin for spotbugs
+    sptbugsPlugins 'com.h3xstream.finsecbugs:findsecbugs-plugin:1.7.1'
+
+}
+
+spotbugs {
+  toolVersion='3.1.12'
+  ignoreFailures=true
+  effort="max"
+  reportLevel="low"
+  reportsDir=file("$project.buildDir/spotbugs")
 }
 
 task copyToLib(type: Copy) {
