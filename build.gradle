@@ -20,6 +20,8 @@ plugins {
     // scans our code for static analysis
     id "org.sonarqube" version "2.7"
 
+    id "com.github.spotbugs" version "1.7.1"
+
     // provides Cucumber reporting
     id "com.github.spacialcircumstances.gradle-cucumber-reporting" version "0.0.15"
 
