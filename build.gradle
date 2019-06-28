@@ -113,6 +113,8 @@ dependencies {
     // so we can programmatically run flyway at startup
     compile "org.flywaydb:flyway-core:5.2.4"
 
+    // spotbugs
+    spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.7.1'
 }
 
 task copyToLib(type: Copy) {
